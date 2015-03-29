@@ -1,0 +1,19 @@
+{
+  "name": "babel-angular2-app",
+  "version": "0.0.1",
+  "description": "Build Angular 2 App with Babel",
+  "scripts": {
+    "postinstall": "make install-beta",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shuhei Kagawa <shuhei.kagawa@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-loader": "^4.2.0",
+    "gulp": "^3.8.11",
+    "webpack": "^1.7.3"
+  },
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.18"
+  }
+}
