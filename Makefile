@@ -5,6 +5,9 @@ all: build
 
 build: copy js
 
+watch:
+	${WEBPACK} --watch
+
 js:
 	${WEBPACK}
 

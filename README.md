@@ -22,6 +22,5 @@ http-server public
 
 ## TODO
 
-- Split app.js and lib.js for faster build.
 - Support rtts_assert.
 - Support source map.
