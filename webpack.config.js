@@ -10,7 +10,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'angular2': 'angular2/es6/prod'
+      'angular2': 'angular2/es6/dev',
+      'rtts_assert': 'rtts_assert/es6'
     },
     extensions: ['', '.webpack.js', '.web.js', '.js', '.es6']
   },

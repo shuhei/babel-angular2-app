@@ -3,6 +3,7 @@ var File = require('babel-core/lib/babel/transformation/file');
 var Transformer = require('babel-core/lib/babel/transformation/transformer');
 
 var transformers = {
+  'other.disableDefine': require('./transformers/other-disable-define'),
   'angular2.typeAnnotation': require('./transformers/angular2-type-annotation'),
   'angular2.atAnnotation': require('./transformers/angular2-at-annotation')
 };
