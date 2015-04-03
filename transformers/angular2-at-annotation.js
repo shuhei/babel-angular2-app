@@ -1,7 +1,8 @@
-var t = require('babel-core/lib/babel/types');
+var babel = require('babel-loader/node_modules/babel-core');
+var t = babel.types;
+var Transformer = babel.Transformer;
 
-module.exports = {
-  check: t.isClass,
+module.exports = new Transformer('angular2-at-annotation', {
   ClassDeclaration: function ClassDeclaration(node, parent, scope, file) {
     var classRef = node.id;
     var decorators = node.decorators;
@@ -16,4 +17,4 @@ module.exports = {
       return [node, assignment];
     }
   }
-};
+});

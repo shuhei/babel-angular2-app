@@ -18,8 +18,3 @@ copy:
 
 clean:
 	rm -rf public
-
-install-beta:
-	rm -rf node_modules/babel-core
-	npm install babel@5.0.0-beta3
-	mv node_modules/babel node_modules/babel-core

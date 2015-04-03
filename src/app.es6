@@ -1,4 +1,5 @@
 import 'babel-core/polyfill';
+import { assert } from 'rtts_assert/rtts_assert';
 
 // HACK: Set root DOM adapter before it is cached in bootstrap as undefined.
 import {BrowserDomAdapter} from 'angular2/src/dom/browser_adapter';

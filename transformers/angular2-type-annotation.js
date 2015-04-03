@@ -1,7 +1,8 @@
-var t = require('babel-core/lib/babel/types');
+var babel = require('babel-loader/node_modules/babel-core');
+var t = babel.types;
+var Transformer = babel.Transformer;
 
-module.exports = {
-  check: t.isClass,
+module.exports = new Transformer('angular2-type-annotation', {
   ClassDeclaration: function ClassDeclaration(node, parent, scope, file) {
     var classRef = node.id;
     var className = classRef.name;
@@ -11,10 +12,16 @@ module.exports = {
       if (bodyNode.type === 'MethodDefinition' && bodyNode.kind === 'constructor') {
         var params = bodyNode.value.params;
         params.forEach(function (param) {
-          var annotation = param.typeAnnotation && param.typeAnnotation.typeAnnotation.id.name;
-          if (annotation) {
-            annotations.push(annotation);
+          var annotation = param.typeAnnotation && param.typeAnnotation.typeAnnotation;
+          if (!annotation) {
+            return;
           }
+          if (annotation.type !== 'GenericTypeAnnotation') {
+            console.log(annotation);
+            throw new Error('Type annotation for constructor should be GenericTypeAnnotation: ' + annotation.type);
+          }
+          // TODO: annotation.typeParameters such as List<Foo>
+          annotations.push(annotation.id.name);
         });
       }
     });
@@ -27,4 +34,4 @@ module.exports = {
       return [node, assignment];
     }
   }
-};
+});
