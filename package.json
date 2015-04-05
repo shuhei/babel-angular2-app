@@ -8,6 +8,7 @@
   "author": "Shuhei Kagawa <shuhei.kagawa@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^5.0.0",
     "babel-loader": "^5.0.0",
     "gulp": "^3.8.11",
     "webpack": "^1.7.3"

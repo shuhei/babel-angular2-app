@@ -1,4 +1,4 @@
-var babel = require('babel-loader/node_modules/babel-core');
+var babel = require('babel-core');
 var t = babel.types;
 var Transformer = babel.Transformer;
 
