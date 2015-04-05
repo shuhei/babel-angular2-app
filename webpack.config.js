@@ -10,9 +10,9 @@ var babelOptions = {
   blacklist: ['strict'],
   plugins: [
     './transformers/disable-define',
-    './transformers/angular2-type-annotation',
+    'angular2-type-annotation',
     './transformers/angular2-type-assertion',
-    './transformers/angular2-at-annotation'
+    'angular2-at-annotation'
   ]
 };
 
