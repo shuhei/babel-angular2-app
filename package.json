@@ -10,8 +10,8 @@
   "devDependencies": {
     "babel-core": "^5.0.0",
     "babel-loader": "^5.0.0",
-    "babel-plugin-angular2-at-annotation": "0.0.1",
-    "babel-plugin-angular2-type-annotation": "0.0.1",
+    "babel-plugin-angular2-at-annotation": "^0.0.1",
+    "babel-plugin-angular2-type-annotation": "^0.0.1",
     "gulp": "^3.8.11",
     "webpack": "^1.7.3"
   },
