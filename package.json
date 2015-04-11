@@ -1,7 +1,7 @@
 {
   "name": "babel-angular2-app",
   "version": "0.0.1",
-  "description": "Build Angular 2 App with Babel",
+  "description": "A skeleton Angular 2 app built with babel.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
