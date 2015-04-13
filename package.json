@@ -8,7 +8,7 @@
   "author": "Shuhei Kagawa <shuhei.kagawa@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^5.0.0",
+    "babel-core": "5.0.12",
     "babel-loader": "^5.0.0",
     "babel-plugin-angular2-at-annotation": "^0.0.1",
     "babel-plugin-angular2-type-annotation": "^0.0.1",
