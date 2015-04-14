@@ -1,15 +1,16 @@
 import 'babel-core/polyfill';
 import { assert } from 'rtts_assert/rtts_assert';
 
-import { Component, Template, bootstrap } from 'angular2/angular2';
+import { Component, View, bootstrap } from 'angular2/angular2';
+import {Injectable} from 'angular2/di';
 import { Greeter } from './services';
 
 @Component({
   selector: 'hello-app',
-  services: [Greeter]
+  injectables: [Greeter]
 })
-@Template({
-  inline: `
+@View({
+  template: `
     <p>{{message}}</p>
   `
 })
