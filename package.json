@@ -15,7 +15,7 @@
     "webpack": "^1.7.3"
   },
   "dependencies": {
-    "angular2": "^2.0.0-alpha.18",
-    "rtts_assert": "^2.0.0-alpha.18"
+    "angular2": "2.0.0-alpha.19",
+    "rtts_assert": "2.0.0-alpha.19"
   }
 }

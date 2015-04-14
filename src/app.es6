@@ -2,7 +2,6 @@ import 'babel-core/polyfill';
 import { assert } from 'rtts_assert/rtts_assert';
 
 import { Component, View, bootstrap } from 'angular2/angular2';
-import {Injectable} from 'angular2/di';
 import { Greeter } from './services';
 
 @Component({
