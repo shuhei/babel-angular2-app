@@ -11,7 +11,7 @@
     "babel-core": "^5.1.3",
     "babel-loader": "^5.0.0",
     "babel-plugin-angular2-at-annotation": "^0.1.0",
-    "babel-plugin-angular2-type-annotation": "^0.1.0",
+    "babel-plugin-angular2-type-annotation": "^0.2.0",
     "webpack": "^1.7.3"
   },
   "dependencies": {
