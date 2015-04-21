@@ -14,10 +14,8 @@ import { Greeter } from './services';
   `
 })
 class Hello {
-  constructor(greeter: Greeter, @Attribute('message') message) {
-    this.message = greeter.hello('Angular 2 app');
-    // Just to demonstrate argument annotation.
-    console.log(message);
+  constructor(greeter: Greeter, @Attribute('name') name) {
+    this.message = greeter.hello(name);
   }
 }
 
@@ -27,12 +25,10 @@ class Hello {
 @View({
   directives: [Hello],
   template: `
-    <hello message="find me on console"></hello>
+    <hello name="Angular 2 App"></hello>
   `
 })
 class HelloApp {
-  constructor() {
-  }
 }
 
 bootstrap(HelloApp);
