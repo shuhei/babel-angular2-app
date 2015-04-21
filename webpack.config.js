@@ -4,9 +4,8 @@ var babelOptions = {
   optional: ['es7.decorators'],
   plugins: [
     './transformers/disable-define',
-    'angular2-type-annotation',
-    './transformers/angular2-type-assertion',
-    'angular2-at-annotation'
+    'angular2-annotations',
+    './transformers/angular2-type-assertion'
   ]
 };
 
