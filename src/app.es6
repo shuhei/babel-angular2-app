@@ -2,6 +2,10 @@ import 'babel-core/polyfill';
 import { assert } from 'rtts_assert/rtts_assert';
 
 import { Component, View, Attribute, bootstrap } from 'angular2/angular2';
+import { bind } from 'angular2/di';
+import { Router, RouterOutlet, RouterLink, RouteParams, RouteConfig } from 'angular2/router';
+import { RootRouter } from 'angular2/src/router/router';
+import { Pipeline } from 'angular2/src/router/pipeline';
 import { Greeter } from './services';
 
 @Component({
@@ -14,8 +18,9 @@ import { Greeter } from './services';
   `
 })
 class Hello {
-  constructor(greeter: Greeter, @Attribute('name') name) {
-    this.message = greeter.hello(name);
+  // constructor(greeter: Greeter, @Attribute('name') name) {
+  constructor(greeter: Greeter) {
+    this.message = greeter.hello('Angular 2 App');
   }
 }
 
@@ -23,12 +28,18 @@ class Hello {
   selector: 'hello-app'
 })
 @View({
-  directives: [Hello],
+  directives: [Hello, RouterOutlet],
   template: `
-    <hello name="Angular 2 App"></hello>
+    <router-outlet></router-outlet>
   `
 })
 class HelloApp {
+  constructor(router: Router) {
+    router.config('/hello', Hello)
+      .then((_) => router.navigate('/hello'))
+  }
 }
 
-bootstrap(HelloApp);
+bootstrap(HelloApp, [
+  bind(Router).toValue(new RootRouter(new Pipeline()))
+]);
