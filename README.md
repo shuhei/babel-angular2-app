@@ -36,3 +36,14 @@ To support AtScript syntax of Angular 2, this skeleton app uses the following ex
 ## TODO
 
 - Support source map.
+
+## Problems
+
+### rtts_assert and webpack
+
+rtts_assert has a function named `define`. Webpack tries to treat `define()` as an AMD call. Currently renaming them with a babel transformer.
+
+### angular2 alpha.22
+
+- In `angular2/dev/es6/src/facade/async.es6`, `if (Rx.hasOwnProperty('default')) {` doesn't work with babel. Added a dirty hack to postinstall script.
+- `export var __esModule = true;` breaks babel's module formatter. Currently removing them with a babel transformer.

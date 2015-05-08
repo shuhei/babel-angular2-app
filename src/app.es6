@@ -1,11 +1,9 @@
 import 'babel-core/polyfill';
+import 'reflect-metadata';
 import { assert } from 'rtts_assert/rtts_assert';
 
 import { Component, View, Attribute, bootstrap } from 'angular2/angular2';
-import { bind } from 'angular2/di';
-import { Router, RouterOutlet, RouterLink, RouteParams, RouteConfig } from 'angular2/router';
-import { RootRouter } from 'angular2/src/router/router';
-import { Pipeline } from 'angular2/src/router/pipeline';
+import { Router, RouterOutlet, routerInjectables } from 'angular2/router';
 import { Greeter } from './services';
 
 @Component({
@@ -35,11 +33,11 @@ class Hello {
 })
 class HelloApp {
   constructor(router: Router) {
-    router.config('/hello', Hello)
-      .then((_) => router.navigate('/hello'))
+    router.config({ path: '/', component: Hello })
+      .then((_) => router.navigate('/'));
   }
 }
 
 bootstrap(HelloApp, [
-  bind(Router).toValue(new RootRouter(new Pipeline()))
+  routerInjectables
 ]);

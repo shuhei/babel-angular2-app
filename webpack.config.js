@@ -3,9 +3,10 @@ var path = require('path');
 var babelOptions = {
   optional: ['es7.decorators'],
   plugins: [
+    './transformers/delete-es-module',
     './transformers/disable-define',
     'angular2-annotations',
-    './transformers/angular2-type-assertion'
+    'type-assertion'
   ]
 };
 
