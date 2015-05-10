@@ -4,8 +4,8 @@ A skeleton Angular 2 app built with babel.
 
 - Bundles JavaScript files into one file. No lazy loading.
 - Uses babel instead of Traceur.
-- Supports `@` annotation and type annotation with babel transformer plugin.
-- (Very limited rtts_assert support)
+- Supports class/parameter decorator and parameter type metadata with babel and a babel transformer plugin.
+- Limited support of rtts_assert.
 
 ## Try
 
@@ -29,7 +29,7 @@ http-server public
 
 ## Babel transformer plugin
 
-To support AtScript syntax of Angular 2, this skeleton app uses the following external babel transformer plugin that I made:
+To support parameter decorator and parameter type metadata of Angular 2, this skeleton app uses the following external babel transformer plugin that I made:
 
 - [babel-plugin-angular2-annotations](https://github.com/shuhei/babel-plugin-angular2-annotations)
 
@@ -45,5 +45,5 @@ rtts_assert has a function named `define`. Webpack tries to treat `define()` as 
 
 ### angular2 alpha.22
 
-- In `angular2/dev/es6/src/facade/async.es6`, `if (Rx.hasOwnProperty('default')) {` doesn't work with babel. Added a dirty hack to postinstall script.
+- In `angular2/dev/es6/src/facade/async.es6`, `if (Rx.hasOwnProperty('default')) {` doesn't work with babel. Tentatively added a dirty hack with postinstall script.
 - `export var __esModule = true;` breaks babel's module formatter. Currently removing them with a babel transformer.
