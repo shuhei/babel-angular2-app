@@ -11,9 +11,9 @@
   "devDependencies": {
     "babel-core": "^5.2.17",
     "babel-loader": "^5.0.0",
-    "babel-plugin-angular2-annotations": "^1.0.0",
-    "babel-plugin-type-assertion": "^0.1.0",
-    "webpack": "^1.7.3"
+    "babel-plugin-angular2-annotations": "^1.0.2",
+    "babel-plugin-type-assertion": "^0.1.1",
+    "webpack": "^1.8.11"
   },
   "dependencies": {
     "angular2": "2.0.0-alpha.22",
