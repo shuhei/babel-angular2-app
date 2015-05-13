@@ -18,3 +18,6 @@ copy:
 
 clean:
 	rm -rf public
+
+patch:
+	sed -i '' "s/Rx.hasOwnProperty('default')/\!Rx.hasOwnProperty('Subject')/g" ./node_modules/angular2/es6/dev/src/facade/async.es6

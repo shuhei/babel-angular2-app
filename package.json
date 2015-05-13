@@ -3,17 +3,17 @@
   "version": "0.0.1",
   "description": "A skeleton Angular 2 app built with babel.",
   "scripts": {
-    "postinstall": "sed -i '' \"s/Rx.hasOwnProperty('default')/\\!Rx.hasOwnProperty('Subject')/g\" ./node_modules/angular2/es6/dev/src/facade/async.es6",
+    "postinstall": "make patch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shuhei Kagawa <shuhei.kagawa@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^5.2.17",
+    "babel-core": "^5.3.1",
     "babel-loader": "^5.0.0",
     "babel-plugin-angular2-annotations": "^1.0.2",
-    "babel-plugin-type-assertion": "^0.1.1",
-    "webpack": "^1.8.11"
+    "babel-plugin-type-assertion": "^0.1.2",
+    "webpack": "^1.9.5"
   },
   "dependencies": {
     "angular2": "2.0.0-alpha.22",
