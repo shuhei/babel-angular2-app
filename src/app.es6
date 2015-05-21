@@ -8,7 +8,7 @@ import { Greeter } from './services';
 
 @Component({
   selector: 'hello',
-  injectables: [Greeter]
+  hostInjector: [Greeter]
 })
 @View({
   template: `

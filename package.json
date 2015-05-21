@@ -9,15 +9,15 @@
   "author": "Shuhei Kagawa <shuhei.kagawa@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^5.3.1",
-    "babel-loader": "^5.0.0",
-    "babel-plugin-angular2-annotations": "^1.0.2",
-    "babel-plugin-type-assertion": "^0.1.2",
-    "webpack": "^1.9.5"
+    "babel-core": "^5.4.5",
+    "babel-loader": "^5.1.3",
+    "babel-plugin-angular2-annotations": "^1.1.0",
+    "babel-plugin-type-assertion": "^0.2.1",
+    "webpack": "^1.9.7"
   },
   "dependencies": {
-    "angular2": "2.0.0-alpha.22",
+    "angular2": "2.0.0-alpha.24",
     "reflect-metadata": "^0.1.0",
-    "rtts_assert": "2.0.0-alpha.22"
+    "rtts_assert": "2.0.0-alpha.24"
   }
 }
