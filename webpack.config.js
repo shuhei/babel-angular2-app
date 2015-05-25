@@ -3,7 +3,6 @@ var path = require('path');
 var babelOptions = {
   optional: ['es7.decorators'],
   plugins: [
-    './transformers/delete-es-module',
     './transformers/disable-define',
     'angular2-annotations',
     'type-assertion'
@@ -18,7 +17,6 @@ module.exports = {
   },
   resolve: {
     alias: {
-      // TODO: Use angular2 bundle.js.
       'angular2': 'angular2/es6/dev',
       'rtts_assert': 'rtts_assert/es6'
     },

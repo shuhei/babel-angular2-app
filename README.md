@@ -46,4 +46,3 @@ rtts_assert has a function named `define`. Webpack tries to treat `define()` as 
 ### angular2 alpha.22
 
 - In `angular2/dev/es6/src/facade/async.es6`, `if (Rx.hasOwnProperty('default')) {` doesn't work with babel. Tentatively added a dirty hack with postinstall script.
-- `export var __esModule = true;` breaks babel's module formatter. Currently removing them with a babel transformer.
