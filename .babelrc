@@ -1,7 +1,6 @@
 {
   "optional": ["es7.decorators"],
   plugins: [
-    "./transformers/disable-define",
     "angular2-annotations"
   ]
 }
