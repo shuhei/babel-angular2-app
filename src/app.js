@@ -5,7 +5,7 @@ import { assert } from 'rtts_assert/rtts_assert';
 
 import { bind, Injector } from 'angular2/di';
 import { Component, View, Attribute, bootstrap } from 'angular2/angular2';
-import { Router, RouteConfig, RouteParams, LocationStrategy, HashLocationStrategy, routerInjectables, routerDirectives } from 'angular2/router';
+import { Router, RouteConfig, RouteParams, LocationStrategy, HashLocationStrategy, ROUTER_BINDINGS, ROUTER_DIRECTIVES } from 'angular2/router';
 import { Greeter } from './services';
 
 @Component({
@@ -50,7 +50,7 @@ class Linker {
   viewBindings: [Greeter]
 })
 @View({
-  directives: [routerDirectives, Linker],
+  directives: [ROUTER_DIRECTIVES, Linker],
   template: `
     <ul>
       <li><a [router-link]="['/hello']">Hello</a></li>
@@ -68,6 +68,6 @@ class HelloApp {
 }
 
 bootstrap(HelloApp, [
-  routerInjectables,
+  ROUTER_BINDINGS,
   bind(LocationStrategy).toClass(HashLocationStrategy)
 ]);

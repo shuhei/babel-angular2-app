@@ -15,15 +15,15 @@
     "babel-plugin-angular2-annotations": "^2.0.0",
     "babel-plugin-type-assertion": "0.2.1",
     "babelify": "^6.3.0",
-    "babylon": "^5.8.23",
+    "babylon": "5.8.23",
     "browserify": "^11.0.1",
     "watchify": "^3.3.1"
   },
   "dependencies": {
-    "angular2": "2.0.0-alpha.35",
+    "angular2": "2.0.0-alpha.36",
     "es6-promise": "^3.0.2",
     "reflect-metadata": "^0.1.0",
-    "rtts_assert": "2.0.0-alpha.35",
+    "rtts_assert": "2.0.0-alpha.36",
     "zone.js": "^0.5.4"
   }
 }
