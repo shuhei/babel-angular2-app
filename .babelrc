@@ -1,6 +1,7 @@
 {
   "optional": ["es7.decorators"],
   plugins: [
-    "angular2-annotations"
+    "angular2-annotations",
+    "type-assertion"
   ]
 }
