@@ -3,21 +3,21 @@
   "version": "0.0.1",
   "description": "A skeleton Angular 2 app built with babel.",
   "scripts": {
-    "postinstall": "make patch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shuhei Kagawa <shuhei.kagawa@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "5.4.7",
-    "babel-loader": "^5.1.3",
-    "babel-plugin-angular2-annotations": "^1.1.0",
+    "babel-core": "5.8.23",
+    "babel-loader": "^5.3.2",
+    "babel-plugin-angular2-annotations": "^2.0.0",
     "babel-plugin-type-assertion": "0.2.1",
-    "webpack": "^1.9.9"
+    "babylon": "^5.8.23",
+    "webpack": "^1.12.0"
   },
   "dependencies": {
-    "angular2": "2.0.0-alpha.25",
+    "angular2": "2.0.0-alpha.35",
     "reflect-metadata": "^0.1.0",
-    "rtts_assert": "2.0.0-alpha.25"
+    "rtts_assert": "2.0.0-alpha.35"
   }
 }
