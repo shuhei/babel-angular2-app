@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "A skeleton Angular 2 app built with babel.",
   "scripts": {
-    "copy": "mkdir -p public && cp src/index.html public/",
-    "build": "npm run copy && browserify src/app.js -t babelify --outfile public/app.js",
-    "watch": "npm run copy && watchify src/app.js -t babelify --outfile public/app.js",
+    "start": "gulp",
+    "build": "gulp build",
+    "watch": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shuhei Kagawa <shuhei.kagawa@gmail.com>",
@@ -18,6 +18,7 @@
     "babelify": "^6.3.0",
     "babylon": "5.8.23",
     "browserify": "^11.0.1",
+    "del": "^2.0.0",
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.6",
     "vinyl-buffer": "^1.0.0",

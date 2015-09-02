@@ -57,7 +57,7 @@ class Linker {
       <li><a [router-link]="['/ciao', { name: 'ng2' }]">Ciao</a></li>
     </ul>
     <router-outlet></router-outlet>
-    <linker name="babel-angular2-app" url="https://github.com/shuhei/babel-angular2-app"></linker>
+    <linker name="GitHub" url="https://github.com/shuhei/babel-angular2-app"></linker>
   `
 })
 @RouteConfig([
