@@ -9,14 +9,28 @@ A skeleton Angular 2 app built with babel.
 
 ## Try
 
-Build
+### Install
+
+Clone/fork this repo and:
 
 ```
+npm install -g gulp-cli
 npm install
-npm run build
 ```
 
-Preview
+### Build
+
+```
+gulp build
+```
+
+### Watch
+
+```
+gulp
+```
+
+### Preview
 
 ```
 npm install -g http-server
