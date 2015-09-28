@@ -1,11 +1,11 @@
-# Build Angular 2 app with babel
+# Build Angular 2 app with Babel
 
-A skeleton Angular 2 app built with babel.
+A skeleton [Angular 2](https://angular.io/) app built with [Babel](https://babeljs.io/) and [Browserify](http://browserify.org/).
 
-- Bundles JavaScript files into one file. No lazy loading.
-- Uses babel instead of Traceur.
-- Supports class/parameter decorator and parameter type metadata with babel and a babel transformer plugin.
-- Limited support of rtts_assert.
+- Uses Babel instead of [TypeScript](http://www.typescriptlang.org/)/[Traceur](https://github.com/google/traceur-compiler).
+- Supports class/parameter decorators and parameter type annotations with Babel and a Babel transformer plugin.
+- Bundles JavaScript files into one file with Browserify. (However, it doesn't use any Browserify-specific technology. You can easily switch to Webpack and etc.)
+- (Experimental) Runtime type checking with [rtts_assert](https://www.npmjs.com/package/rtts_assert).
 
 ## Try
 
@@ -43,7 +43,7 @@ Back in the time of angular2 alpha.18, `angular/quickstart` provided us to try A
 
 ## Babel transformer plugin
 
-To support parameter decorator and parameter type metadata of Angular 2, this skeleton app uses the following external babel transformer plugin that I made:
+To support parameter decorator and parameter type metadata of Angular 2, this skeleton app uses the following external Babel transformer plugin that I made:
 
 - [babel-plugin-angular2-annotations](https://github.com/shuhei/babel-plugin-angular2-annotations)
 
