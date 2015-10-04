@@ -11,7 +11,7 @@
   "author": "Shuhei Kagawa <shuhei.kagawa@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "5.8.23",
+    "babel-core": "5.8.25",
     "babel-eslint": "^4.1.1",
     "babel-plugin-angular2-annotations": "^2.0.0",
     "babel-plugin-type-assertion": "^0.3.0",
@@ -26,7 +26,7 @@
     "watchify": "^3.3.1"
   },
   "dependencies": {
-    "angular2": "2.0.0-alpha.37",
+    "angular2": "2.0.0-alpha.38",
     "reflect-metadata": "^0.1.0",
     "rtts_assert": "2.0.0-alpha.37",
     "zone.js": "^0.5.5"

@@ -3,9 +3,17 @@ import 'reflect-metadata';
 import 'babel-core/polyfill';
 import { assert } from 'rtts_assert/rtts_assert';
 
-import { bind, Injector } from 'angular2/di';
-import { Component, View, Attribute, bootstrap } from 'angular2/angular2';
-import { Router, RouteConfig, RouteParams, LocationStrategy, HashLocationStrategy, ROUTER_BINDINGS, ROUTER_DIRECTIVES } from 'angular2/router';
+import {
+  Component, View, Attribute,
+  bind,
+  bootstrap
+} from 'angular2/angular2';
+import {
+  Router, RouteConfig, RouteParams,
+  LocationStrategy, HashLocationStrategy,
+  ROUTER_BINDINGS, ROUTER_DIRECTIVES, ROUTER_PRIMARY_COMPONENT
+} from 'angular2/router';
+
 import { Greeter } from './services';
 
 @Component({
@@ -53,21 +61,23 @@ class Linker {
   directives: [ROUTER_DIRECTIVES, Linker],
   template: `
     <ul>
-      <li><a [router-link]="['/hello']">Hello</a></li>
-      <li><a [router-link]="['/ciao', { name: 'ng2' }]">Ciao</a></li>
+      <li><a [router-link]="['/Hello']">Hello</a></li>
+      <li><a [router-link]="['/Ciao', { name: 'ng2' }]">Ciao</a></li>
     </ul>
     <router-outlet></router-outlet>
     <linker name="GitHub" url="https://github.com/shuhei/babel-angular2-app"></linker>
   `
 })
 @RouteConfig([
-  { path: '/', component: Hello, as: 'hello' },
-  { path: '/ciao/:name', component: Ciao, as: 'ciao' }
+  { path: '/', component: Hello, as: 'Hello' },
+  { path: '/ciao/:name', component: Ciao, as: 'Ciao' }
 ])
 class HelloApp {
 }
 
 bootstrap(HelloApp, [
   ROUTER_BINDINGS,
-  bind(LocationStrategy).toClass(HashLocationStrategy)
+  bind(LocationStrategy).toClass(HashLocationStrategy),
+  // https://github.com/angular/angular/issues/4318
+  bind(ROUTER_PRIMARY_COMPONENT).toValue(HelloApp)
 ]);
