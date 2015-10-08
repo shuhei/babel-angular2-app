@@ -5,7 +5,6 @@ A skeleton [Angular 2](https://angular.io/) app built with [Babel](https://babel
 - Uses Babel instead of [TypeScript](http://www.typescriptlang.org/)/[Traceur](https://github.com/google/traceur-compiler).
 - Supports class/parameter decorators and parameter type annotations with Babel and a Babel transformer plugin.
 - Bundles JavaScript files into one file with Browserify. (However, it doesn't use any Browserify-specific technology. You can easily switch to Webpack and etc.)
-- (Experimental) Runtime type checking with [rtts_assert](https://www.npmjs.com/package/rtts_assert).
 
 ## Try
 

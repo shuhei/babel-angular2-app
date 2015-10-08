@@ -1,5 +1,3 @@
-import { assert } from 'rtts_assert/rtts_assert';
-
 export class Greeter {
   say(greeting: string, name: string) {
     const capitalized = this._capitalize(greeting);
