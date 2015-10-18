@@ -4,13 +4,13 @@ import 'babel-core/polyfill';
 
 import {
   Component, View, Attribute,
-  bind,
+  provide,
   bootstrap
 } from 'angular2/angular2';
 import {
   Router, RouteConfig, RouteParams,
   LocationStrategy, HashLocationStrategy,
-  ROUTER_BINDINGS, ROUTER_DIRECTIVES, ROUTER_PRIMARY_COMPONENT
+  ROUTER_PROVIDERS, ROUTER_DIRECTIVES, ROUTER_PRIMARY_COMPONENT
 } from 'angular2/router';
 
 import { Greeter } from './services';
@@ -54,7 +54,7 @@ class Linker {
 
 @Component({
   selector: 'hello-app',
-  viewBindings: [Greeter]
+  viewProviders: [Greeter]
 })
 @View({
   directives: [ROUTER_DIRECTIVES, Linker],
@@ -75,8 +75,8 @@ class HelloApp {
 }
 
 bootstrap(HelloApp, [
-  ROUTER_BINDINGS,
-  bind(LocationStrategy).toClass(HashLocationStrategy),
+  ROUTER_PROVIDERS,
+  provide(LocationStrategy, { useClass: HashLocationStrategy }),
   // https://github.com/angular/angular/issues/4318
-  bind(ROUTER_PRIMARY_COMPONENT).toValue(HelloApp)
+  provide(ROUTER_PRIMARY_COMPONENT, { useValue: HelloApp })
 ]);
