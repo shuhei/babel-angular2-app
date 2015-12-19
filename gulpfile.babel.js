@@ -38,8 +38,7 @@ gulp.task('default', ['copy', 'watch']);
 function bundle(b) {
   return b.bundle()
     .on('error', (e) => {
-      const pe = new PluginError('browserify', e);
-      console.log(pe.toString());
+      console.error(e.stack);
     })
     .pipe(source('app.js'))
     .pipe(buffer())
