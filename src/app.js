@@ -46,7 +46,7 @@ class Ciao {
   template: '<p><a [href]="url" [title]="name">{{ name }}</a></p>'
 })
 class Linker {
-  constructor(greeter: Greeter, @Attribute('name') name, @Attribute('url') url) {
+  constructor(@Attribute('name') name, @Attribute('url') url) {
     this.name = name;
     this.url = url;
   }
@@ -76,7 +76,5 @@ class HelloApp {
 
 bootstrap(HelloApp, [
   ROUTER_PROVIDERS,
-  provide(LocationStrategy, { useClass: HashLocationStrategy }),
-  // https://github.com/angular/angular/issues/4318
-  provide(ROUTER_PRIMARY_COMPONENT, { useValue: HelloApp })
+  provide(LocationStrategy, { useClass: HashLocationStrategy })
 ]);
