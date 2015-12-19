@@ -15,13 +15,13 @@ gulp.task('copy', () => {
 });
 
 gulp.task('build', ['copy'], () => {
-  const b = browserify('src/app.js')
+  const b = browserify('src/index.js')
     .transform(babelify);
   return bundle(b);
 });
 
 gulp.task('watch', () => {
-  const b = browserify('src/app.js', watchify.args)
+  const b = browserify('src/index.js', watchify.args)
     .transform(babelify);
   const w = watchify(b)
     .on('update', () => bundle(w))
@@ -40,7 +40,7 @@ function bundle(b) {
     .on('error', (e) => {
       console.error(e.stack);
     })
-    .pipe(source('app.js'))
+    .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(gulp.dest('public'));
 }

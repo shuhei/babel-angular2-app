@@ -1,19 +1,7 @@
-import 'zone.js/lib/browser/zone-microtask';
-import 'reflect-metadata';
-import 'babel-polyfill';
+import {Component, View, Attribute} from 'angular2/core';
+import {RouteConfig, RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {
-  Component, View, Attribute,
-  provide
-} from 'angular2/core';
-import {bootstrap} from 'angular2/platform/browser';
-import {
-  Router, RouteConfig, RouteParams,
-  LocationStrategy, HashLocationStrategy,
-  ROUTER_PROVIDERS, ROUTER_DIRECTIVES, ROUTER_PRIMARY_COMPONENT
-} from 'angular2/router';
-
-import { Greeter } from './services';
+import {Greeter} from './services';
 
 @Component({
   selector: 'hello',
@@ -66,10 +54,5 @@ class Linker {
   { path: '/', component: Hello, as: 'Hello' },
   { path: '/ciao/:name', component: Ciao, as: 'Ciao' }
 ])
-class HelloApp {
+export class HelloApp {
 }
-
-bootstrap(HelloApp, [
-  ROUTER_PROVIDERS,
-  provide(LocationStrategy, { useClass: HashLocationStrategy })
-]);
