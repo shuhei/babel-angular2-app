@@ -1,6 +1,6 @@
 import 'zone.js/lib/browser/zone-microtask';
 import 'reflect-metadata';
-import 'babel-core/polyfill';
+import 'babel-polyfill';
 
 import {
   Component, View, Attribute,
@@ -16,9 +16,7 @@ import {
 import { Greeter } from './services';
 
 @Component({
-  selector: 'hello'
-})
-@View({
+  selector: 'hello',
   template: '<p>{{ message }}</p>'
 })
 class Hello {
@@ -28,9 +26,7 @@ class Hello {
 }
 
 @Component({
-  selector: 'ciao'
-})
-@View({
+  selector: 'ciao',
   template: '<p>{{ message }}</p>'
 })
 class Ciao {
@@ -40,9 +36,8 @@ class Ciao {
 }
 
 @Component({
-  selector: 'linker'
-})
-@View({
+  selector: 'linker',
+  inputs: ['name', 'url'],
   template: '<p><a [href]="url" [title]="name">{{ name }}</a></p>'
 })
 class Linker {
