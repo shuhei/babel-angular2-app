@@ -4,9 +4,9 @@ import 'babel-core/polyfill';
 
 import {
   Component, View, Attribute,
-  provide,
-  bootstrap
-} from 'angular2/angular2';
+  provide
+} from 'angular2/core';
+import {bootstrap} from 'angular2/platform/browser';
 import {
   Router, RouteConfig, RouteParams,
   LocationStrategy, HashLocationStrategy,
@@ -60,8 +60,8 @@ class Linker {
   directives: [ROUTER_DIRECTIVES, Linker],
   template: `
     <ul>
-      <li><a [router-link]="['/Hello']">Hello</a></li>
-      <li><a [router-link]="['/Ciao', { name: 'ng2' }]">Ciao</a></li>
+      <li><a [routerLink]="['/Hello']">Hello</a></li>
+      <li><a [routerLink]="['/Ciao', { name: 'ng2' }]">Ciao</a></li>
     </ul>
     <router-outlet></router-outlet>
     <linker name="GitHub" url="https://github.com/shuhei/babel-angular2-app"></linker>
