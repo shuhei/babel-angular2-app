@@ -25,7 +25,6 @@ class Ciao {
 
 @Component({
   selector: 'linker',
-  inputs: ['name', 'url'],
   template: '<p><a [href]="url" [title]="name">{{ name }}</a></p>'
 })
 class Linker {
