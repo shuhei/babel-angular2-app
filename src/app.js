@@ -7,7 +7,7 @@ import {Greeter} from './services';
   selector: 'hello',
   template: '<p>{{ message }}</p>'
 })
-class Hello {
+export class Hello {
   constructor(greeter: Greeter) {
     this.message = greeter.say('hello', 'Angular 2');
   }
@@ -17,7 +17,7 @@ class Hello {
   selector: 'ciao',
   template: '<p>{{ message }}</p>'
 })
-class Ciao {
+export class Ciao {
   constructor(greeter: Greeter, routeParams: RouteParams) {
     this.message = greeter.say('ciao', routeParams.get('name'));
   }
@@ -27,7 +27,7 @@ class Ciao {
   selector: 'linker',
   template: '<p><a [href]="url" [title]="name">{{ name }}</a></p>'
 })
-class Linker {
+export class Linker {
   constructor(@Attribute('name') name, @Attribute('url') url) {
     this.name = name;
     this.url = url;

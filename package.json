@@ -7,7 +7,8 @@
     "build": "gulp build",
     "watch": "gulp watch",
     "clean": "gulp clean",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start --single-run",
+    "tdd": "karma start"
   },
   "author": "Shuhei Kagawa <shuhei.kagawa@gmail.com>",
   "repository": "shuhei/babel-angular2-app",
@@ -26,6 +27,13 @@
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.7",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.15",
+    "karma-browserify": "^4.4.2",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-source-map-support": "^1.1.0",
+    "phantomjs": "^1.9.19",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.6.1"
