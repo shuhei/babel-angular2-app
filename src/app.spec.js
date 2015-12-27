@@ -1,10 +1,3 @@
-import 'zone.js/lib/browser/zone-microtask';
-import 'reflect-metadata';
-import 'babel-polyfill';
-
-import {BrowserDomAdapter} from 'angular2/platform/browser'
-BrowserDomAdapter.makeCurrent();
-
 import {Component, provide} from 'angular2/core';
 import {RouteParams} from 'angular2/router';
 import {
