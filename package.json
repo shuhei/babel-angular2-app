@@ -3,12 +3,15 @@
   "version": "0.0.1",
   "description": "A skeleton Angular 2 app built with babel.",
   "scripts": {
+    "postinstall": "webdriver-manager update",
     "start": "gulp",
     "build": "gulp build",
     "watch": "gulp watch",
     "clean": "gulp clean",
-    "test": "karma start --single-run",
-    "tdd": "karma start"
+    "test": "npm run unit && npm run e2e",
+    "unit": "karma start --single-run",
+    "tdd": "karma start",
+    "e2e": "npm run build && protractor"
   },
   "author": "Shuhei Kagawa <shuhei.kagawa@gmail.com>",
   "repository": "shuhei/babel-angular2-app",
@@ -27,6 +30,7 @@
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.7",
+    "http-server": "^0.8.5",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.15",
     "karma-browserify": "^4.4.2",
@@ -34,6 +38,7 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-source-map-support": "^1.1.0",
     "phantomjs": "^1.9.19",
+    "protractor": "^3.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.6.1"
