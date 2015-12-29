@@ -6,6 +6,8 @@ A skeleton [Angular 2](https://angular.io/) app built with [Babel](https://babel
 - Supports class/parameter decorators and parameter type annotations with Babel and a Babel transformer plugin.
 - Bundles JavaScript files into one file with Browserify. (However, it doesn't use any Browserify-specific technology. You can easily switch to Webpack and etc.)
 
+**Parameter decorator support will be dropped soon because [Babel has forbidden monkey-patching its parser](https://github.com/babel/babel/pull/3204).**
+
 ## Try
 
 ### Install
