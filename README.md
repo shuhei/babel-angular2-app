@@ -14,20 +14,23 @@ A skeleton [Angular 2](https://angular.io/) app built with [Babel](https://babel
 Clone/fork this repo and:
 
 ```
-npm install -g gulp-cli
 npm install
 ```
 
 ### Build
 
-```
-gulp build
-```
-
-### Watch
+Build once:
 
 ```
-gulp
+npm run build
+```
+
+Watch files and rebuild:
+
+```
+npm run watch
+# or
+npm start
 ```
 
 ### Preview
@@ -35,6 +38,26 @@ gulp
 ```
 npm install -g http-server
 http-server public
+```
+
+### Test
+
+Unit and e2e tests:
+
+```
+npm test
+```
+
+Unit tests:
+
+```
+npm run unit
+```
+
+e2e tests:
+
+```
+npm run e2e
 ```
 
 ## Motivation
