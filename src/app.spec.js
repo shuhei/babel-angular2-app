@@ -64,7 +64,7 @@ describe('Linker', () => {
         fixture.detectChanges();
 
         const linker = fixture.debugElement.componentViewChildren[0];
-        const instance = linker.inject(Linker);
+        const instance = linker.componentInstance;
         expect(instance.name).toEqual('Foo');
         expect(instance.url).toEqual('http://foo.com');
         const anchor = linker.nativeElement.querySelector('a');

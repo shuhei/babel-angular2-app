@@ -1,4 +1,4 @@
-import {Component, View, Attribute} from 'angular2/core';
+import {Component, View, Input} from 'angular2/core';
 import {RouteConfig, RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {Greeter} from './services';
@@ -28,9 +28,10 @@ export class Ciao {
   template: '<p><a [href]="url" [title]="name">{{ name }}</a></p>'
 })
 export class Linker {
-  constructor(@Attribute('name') name, @Attribute('url') url) {
-    this.name = name;
-    this.url = url;
+  @Input() name;
+  @Input() url;
+
+  constructor() {
   }
 }
 
