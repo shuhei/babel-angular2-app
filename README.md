@@ -70,6 +70,6 @@ To support type annotation and property decorator without initializer, this skel
 
 - [babel-plugin-angular2-annotations](https://github.com/shuhei/babel-plugin-angular2-annotations)
 
-## TODO
+# License
 
-- Support source map.
+[ISC](https://opensource.org/licenses/ISC)
