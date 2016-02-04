@@ -12,7 +12,10 @@ import babelify from 'babelify';
 import del from 'del';
 
 gulp.task('copy', () => {
-  return gulp.src('src/index.html')
+  return gulp.src([
+    'src/index.html',
+    'node_modules/zone.js/dist/zone-microtask.js'
+  ])
     .pipe(gulp.dest('public'));
 });
 
