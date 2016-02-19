@@ -63,7 +63,7 @@ describe('Linker', () => {
       .then((fixture) => {
         fixture.detectChanges();
 
-        const linker = fixture.debugElement.componentViewChildren[0];
+        const linker = fixture.debugElement.children[0];
         const instance = linker.componentInstance;
         expect(instance.name).toEqual('Foo');
         expect(instance.url).toEqual('http://foo.com');
