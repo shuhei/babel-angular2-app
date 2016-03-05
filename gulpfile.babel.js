@@ -3,6 +3,8 @@ import gutil, { PluginError } from 'gulp-util';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 import sourcemaps from 'gulp-sourcemaps';
+import uglify from 'gulp-uglify';
+import gulpif from 'gulp-if';
 
 import assign from 'object-assign';
 import browserify from 'browserify';
@@ -11,10 +13,11 @@ import babelify from 'babelify';
 
 import del from 'del';
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 gulp.task('copy', () => {
   return gulp.src([
     'src/index.html',
-    'node_modules/angular2/bundles/angular2-polyfills.js',
     'node_modules/angular2/bundles/angular2-polyfills.min.js'
   ])
     .pipe(gulp.dest('public'));
@@ -49,6 +52,7 @@ function bundle(b) {
     .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(gulpif(isProduction, uglify()))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('public'));
 }
