@@ -14,7 +14,8 @@ import del from 'del';
 gulp.task('copy', () => {
   return gulp.src([
     'src/index.html',
-    'node_modules/zone.js/dist/zone-microtask.js'
+    'node_modules/angular2/bundles/angular2-polyfills.js',
+    'node_modules/angular2/bundles/angular2-polyfills.min.js'
   ])
     .pipe(gulp.dest('public'));
 });

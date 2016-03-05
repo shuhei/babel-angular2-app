@@ -30,9 +30,6 @@ export class Ciao {
 export class Linker {
   @Input() name;
   @Input() url;
-
-  constructor() {
-  }
 }
 
 @Component({
@@ -51,8 +48,8 @@ export class Linker {
   `
 })
 @RouteConfig([
-  { path: '/', component: Hello, as: 'Hello' },
-  { path: '/ciao/:name', component: Ciao, as: 'Ciao' }
+  { path: '/', component: Hello, name: 'Hello' },
+  { path: '/ciao/:name', component: Ciao, name: 'Ciao' }
 ])
 export class HelloApp {
 }
