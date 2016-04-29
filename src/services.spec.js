@@ -1,12 +1,8 @@
 import {
-  AsyncTestCompleter,
-  beforeEach,
   describe,
   expect,
-  inject,
-  it,
-  TestComponentBuilder,
-} from 'angular2/testing_internal';
+  it
+} from 'angular2/testing';
 
 import {Greeter} from './services';
 
