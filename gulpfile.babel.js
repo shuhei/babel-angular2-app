@@ -12,11 +12,7 @@ import babelify from 'babelify';
 import del from 'del';
 
 gulp.task('copy', () => {
-  return gulp.src([
-    'src/index.html',
-    'node_modules/angular2/bundles/angular2-polyfills.js',
-    'node_modules/angular2/bundles/angular2-polyfills.min.js'
-  ])
+  return gulp.src(['src/index.html'])
     .pipe(gulp.dest('public'));
 });
 

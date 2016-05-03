@@ -1,5 +1,5 @@
-import {Component, provide} from 'angular2/core';
-import {RouteParams} from 'angular2/router';
+import {Component, provide} from '@angular/core';
+import {RouteSegment} from '@angular/router';
 import {
   async,
   beforeEach,
@@ -8,8 +8,8 @@ import {
   expect,
   inject,
   it,
-  TestComponentBuilder,
-} from 'angular2/testing';
+} from '@angular/core/testing';
+import {TestComponentBuilder} from '@angular/compiler/testing';
 
 import {Greeter} from './services';
 import {Hello, Ciao, Linker} from './app';
@@ -17,30 +17,29 @@ import {Hello, Ciao, Linker} from './app';
 describe('Hello', () => {
   beforeEachProviders(() => [Greeter]);
 
-  it('renders greeting', inject([TestComponentBuilder], (tcb) => {
+  it('renders greeting', async(inject([TestComponentBuilder], (tcb) => {
     tcb.createAsync(Hello)
       .then((fixture) => {
         fixture.detectChanges();
 
         expect(fixture.debugElement.nativeElement).toHaveText('Hello, Angular 2!');
       });
-  }));
+  })));
 });
 
 describe('Ciao', () => {
-  beforeEachProviders(() => [
-    Greeter,
-    provide(RouteParams, { useValue: new RouteParams({ name : 'Babel' }) })
-  ]);
+  beforeEachProviders(() => [Greeter]);
 
-  it('renders greeting', inject([TestComponentBuilder], (tcb) => {
+  it('renders greeting', async(inject([TestComponentBuilder], (tcb) => {
     tcb.createAsync(Ciao)
       .then((fixture) => {
+        const curr = new RouteSegment([], { name: 'Babel' }, null, null);
+        fixture.debugElement.componentInstance.routerOnActivate(curr);
         fixture.detectChanges();
 
         expect(fixture.debugElement.nativeElement).toHaveText('Ciao, Babel!');
       });
-  }));
+  })));
 });
 
 describe('Linker', () => {
@@ -52,7 +51,7 @@ describe('Linker', () => {
   })
   class Parent {}
 
-  it('renders a link with given attributes', inject([TestComponentBuilder], (tcb) => {
+  it('renders a link with given attributes', async(inject([TestComponentBuilder], (tcb) => {
     tcb.createAsync(Parent)
       .then((fixture) => {
         fixture.detectChanges();
@@ -66,5 +65,5 @@ describe('Linker', () => {
         expect(anchor.title).toEqual('Foo');
         expect(anchor).toHaveText('Foo');
       });
-  }));
+  })));
 });
