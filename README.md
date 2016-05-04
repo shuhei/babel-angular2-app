@@ -4,7 +4,6 @@ A skeleton [Angular 2](https://angular.io/) app built with [Babel](https://babel
 
 - Uses Babel instead of [TypeScript](http://www.typescriptlang.org/)/[Traceur](https://github.com/google/traceur-compiler).
 - Supports class/parameter decorators and parameter type annotations with [Babel](https://github.com/babel/babel), [babel-plugin-transform-decorators-legacy](https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy) and [babel-plugin-angular2-annotations](https://github.com/shuhei/babel-plugin-angular2-annotations).
-  - **Parameter decorator is not supported because the syntax is not supported by Babel's parser.**
 - Bundles JavaScript files into one file with Browserify. (However, it doesn't use any Browserify-specific technology. You can easily switch to Webpack and etc.)
 
 ## Try
@@ -66,7 +65,7 @@ Back in the time of angular2 alpha.18, `angular/quickstart` provided us to try A
 
 ## Babel transformer plugin
 
-To support type annotation and property decorator without initializer, this skeleton app uses the following external Babel transform plugin that I made:
+To support type annotation, parameter decorator and property decorator without initializer, this skeleton app uses the following external Babel transform plugin that I made:
 
 - [babel-plugin-angular2-annotations](https://github.com/shuhei/babel-plugin-angular2-annotations)
 

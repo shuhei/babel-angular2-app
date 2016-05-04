@@ -1,4 +1,8 @@
-import {Component, Input} from '@angular/core';
+import {
+  Component,
+  Input,
+  Attribute
+} from '@angular/core';
 import {
   Routes,
   Route,
@@ -37,8 +41,11 @@ export class Ciao {
   template: '<p><a [href]="url" [title]="name">{{ name }}</a></p>'
 })
 export class Linker {
-  @Input() name;
   @Input() url;
+
+  constructor(@Attribute('name') name) {
+    this.name = name;
+  }
 }
 
 @Component({
