@@ -4,11 +4,12 @@ import {
   Attribute
 } from '@angular/core';
 import {
-  Routes,
-  Route,
-  ROUTER_PROVIDERS,
+  ActivatedRoute,
+  RouterConfig,
+  provideRouter,
   ROUTER_DIRECTIVES
 } from '@angular/router';
+import 'rxjs/add/operator/map';
 
 import {Greeter} from './services';
 
@@ -24,15 +25,12 @@ export class Hello {
 
 @Component({
   selector: 'ciao',
-  template: '<p>{{ message }}</p>'
+  template: '<p>{{ message$ | async }}</p>'
 })
 export class Ciao {
-  constructor(greeter: Greeter) {
-    this.greeter = greeter;
-  }
-
-  routerOnActivate(curr, prev, currTree, prevTree) {
-    this.message = this.greeter.say('ciao', curr.getParam('name'));
+  constructor(greeter: Greeter, route: ActivatedRoute) {
+    this.message$ = route.params
+      .map(params => greeter.say('ciao', params.name));
   }
 }
 
@@ -61,9 +59,12 @@ export class Linker {
     <linker name="GitHub" url="https://github.com/shuhei/babel-angular2-app"></linker>
   `
 })
-@Routes([
-  new Route({ path: '/', component: Hello }),
-  new Route({ path: '/ciao/:name', component: Ciao })
-])
 export class HelloApp {
 }
+
+const routes = [
+  { path: '/', component: Hello, index: true },
+  { path: '/ciao/:name', component: Ciao }
+];
+const routerProviders = provideRouter(routes);
+export { routerProviders };

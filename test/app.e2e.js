@@ -18,7 +18,7 @@ describe('app', () => {
 
   it('switches contents by routing', () => {
     expect(element(by.css('hello')).getText()).toEqual('Hello, Angular 2!');
-    expect(browser.getCurrentUrl()).not.toMatch(/#/);
+    expect(browser.getCurrentUrl()).toMatch(/\/#\/$/);
 
     element(by.linkText('Ciao')).click();
     expect(element(by.css('ciao')).getText()).toEqual('Ciao, ng2!');
@@ -26,6 +26,6 @@ describe('app', () => {
 
     element(by.linkText('Hello')).click();
     expect(element(by.css('hello')).getText()).toEqual('Hello, Angular 2!');
-    expect(browser.getCurrentUrl()).not.toMatch(/#/);
+    expect(browser.getCurrentUrl()).toMatch(/\/#\/$/);
   });
 });

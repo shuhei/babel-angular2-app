@@ -1,5 +1,8 @@
 import {Component, provide} from '@angular/core';
-import {RouteSegment} from '@angular/router';
+import {
+  ActivatedRoute,
+  UrlPathWithParams
+} from '@angular/router';
 import {
   async,
   beforeEach,
@@ -13,6 +16,9 @@ import {TestComponentBuilder} from '@angular/compiler/testing';
 
 import {Greeter} from './services';
 import {Hello, Ciao, Linker} from './app';
+
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 
 describe('Hello', () => {
   beforeEachProviders(() => [Greeter]);
@@ -31,12 +37,14 @@ describe('Ciao', () => {
   beforeEachProviders(() => [Greeter]);
 
   it('renders greeting', async(inject([TestComponentBuilder], (tcb) => {
-    tcb.createAsync(Ciao)
-      .then((fixture) => {
-        const curr = new RouteSegment([], { name: 'Babel' }, null, null);
-        fixture.debugElement.componentInstance.routerOnActivate(curr);
-        fixture.detectChanges();
+    const params = { name: 'Babel' };
+    const url = [new UrlPathWithParams('ciao', params)];
+    const route = new ActivatedRoute(Observable.of(url), Observable.of(params));
 
+    tcb.overrideProviders(Ciao, [{ provide: ActivatedRoute, useValue: route }])
+      .createAsync(Ciao)
+      .then((fixture) => {
+        fixture.detectChanges();
         expect(fixture.debugElement.nativeElement).toHaveText('Ciao, Babel!');
       });
   })));
