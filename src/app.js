@@ -63,8 +63,8 @@ export class HelloApp {
 }
 
 const routes = [
-  { path: '/', component: Hello, index: true },
-  { path: '/ciao/:name', component: Ciao }
+  { path: '', component: Hello },
+  { path: 'ciao/:name', component: Ciao }
 ];
 const routerProviders = provideRouter(routes);
 export { routerProviders };
