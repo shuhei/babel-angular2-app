@@ -1,9 +1,3 @@
-import {
-  describe,
-  expect,
-  it
-} from '@angular/core/testing';
-
 import {Greeter} from './services';
 
 describe('Greeter', () => {

@@ -1,14 +1,18 @@
 import {
+  provide,
+  NgModule,
   Component,
   Input,
   Attribute
 } from '@angular/core';
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import {BrowserModule}  from '@angular/platform-browser';
 import {
   ActivatedRoute,
-  RouterConfig,
-  provideRouter,
+  RouterModule,
   ROUTER_DIRECTIVES
 } from '@angular/router';
+
 import 'rxjs/add/operator/map';
 
 import {Greeter} from './services';
@@ -48,8 +52,6 @@ export class Linker {
 
 @Component({
   selector: 'hello-app',
-  viewProviders: [Greeter],
-  directives: [ROUTER_DIRECTIVES, Linker],
   template: `
     <ul>
       <li><a [routerLink]="['/']">Hello</a></li>
@@ -62,9 +64,29 @@ export class Linker {
 export class HelloApp {
 }
 
-const routes = [
+const routing = RouterModule.forRoot([
   { path: '', component: Hello },
   { path: 'ciao/:name', component: Ciao }
-];
-const routerProviders = provideRouter(routes);
-export { routerProviders };
+]);
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    routing
+  ],
+  declarations: [
+    HelloApp,
+    Hello,
+    Ciao,
+    Linker
+  ],
+  providers: [
+    Greeter,
+    provide(LocationStrategy, { useClass: HashLocationStrategy })
+  ],
+  bootstrap: [
+    HelloApp
+  ]
+})
+export class AppModule {
+}

@@ -1,13 +1,8 @@
 import 'babel-polyfill';
 import 'zone.js/dist/zone';
 
-import {provide} from '@angular/core';
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
-import {HelloApp, routerProviders} from './app';
+import {AppModule} from './app';
 
-bootstrap(HelloApp, [
-  routerProviders,
-  provide(LocationStrategy, { useClass: HashLocationStrategy })
-]).catch(err => console.error(err));
+platformBrowserDynamic().bootstrapModule(AppModule);
