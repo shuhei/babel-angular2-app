@@ -1,14 +1,11 @@
-import {Component, provide} from '@angular/core';
-import {
-  ActivatedRoute,
-  UrlSegment,
-} from '@angular/router';
-import {TestBed} from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { ActivatedRoute, UrlSegment } from '@angular/router';
+import { TestBed } from '@angular/core/testing';
 
-import {Greeter} from './services';
-import {Hello, Ciao, Linker} from './app';
+import { Greeter } from './services';
+import { Hello, Ciao, Linker } from './app';
 
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
 describe('Hello', () => {

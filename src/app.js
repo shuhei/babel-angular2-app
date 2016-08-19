@@ -5,17 +5,16 @@ import {
   Input,
   Attribute
 } from '@angular/core';
-import {LocationStrategy, HashLocationStrategy} from '@angular/common';
-import {BrowserModule}  from '@angular/platform-browser';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { BrowserModule }  from '@angular/platform-browser';
 import {
   ActivatedRoute,
   RouterModule,
   ROUTER_DIRECTIVES
 } from '@angular/router';
-
 import 'rxjs/add/operator/map';
 
-import {Greeter} from './services';
+import { Greeter } from './services';
 
 @Component({
   selector: 'hello',

@@ -1,4 +1,4 @@
-import {Greeter} from './services';
+import { Greeter } from './services';
 
 describe('Greeter', () => {
   describe('#say', () => {
