@@ -1,3 +1,4 @@
+/* eslint-env jasmine */
 import { Greeter } from './services';
 
 describe('Greeter', () => {

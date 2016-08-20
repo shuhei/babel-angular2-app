@@ -1,12 +1,12 @@
+/* eslint-env jasmine */
 import { Component } from '@angular/core';
 import { ActivatedRoute, UrlSegment } from '@angular/router';
 import { TestBed } from '@angular/core/testing';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 
 import { Greeter } from './services';
 import { Hello, Ciao, Linker } from './app';
-
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
 
 describe('Hello', () => {
   it('renders greeting', () => {
@@ -26,7 +26,7 @@ describe('Ciao', () => {
     const route = new ActivatedRoute(Observable.of(url), Observable.of(params));
     TestBed.configureTestingModule({
       declarations: [Ciao],
-      providers: [Greeter, { provide: ActivatedRoute, useValue: route }]
+      providers: [Greeter, { provide: ActivatedRoute, useValue: route }],
     });
 
     const fixture = TestBed.createComponent(Ciao);
@@ -39,7 +39,7 @@ describe('Ciao', () => {
 describe('Linker', () => {
   @Component({
     template: '<linker url="http://foo.com" name="Foo"></linker>',
-    directives: [Linker]
+    directives: [Linker],
   })
   class Parent {}
 

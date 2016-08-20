@@ -1,24 +1,14 @@
-import {
-  provide,
-  NgModule,
-  Component,
-  Input,
-  Attribute
-} from '@angular/core';
+import { provide, NgModule, Component, Input, Attribute } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { BrowserModule }  from '@angular/platform-browser';
-import {
-  ActivatedRoute,
-  RouterModule,
-  ROUTER_DIRECTIVES
-} from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import 'rxjs/add/operator/map';
 
 import { Greeter } from './services';
 
 @Component({
   selector: 'hello',
-  template: '<p>{{ message }}</p>'
+  template: '<p>{{ message }}</p>',
 })
 export class Hello {
   constructor(greeter: Greeter) {
@@ -28,7 +18,7 @@ export class Hello {
 
 @Component({
   selector: 'ciao',
-  template: '<p>{{ message$ | async }}</p>'
+  template: '<p>{{ message$ | async }}</p>',
 })
 export class Ciao {
   constructor(greeter: Greeter, route: ActivatedRoute) {
@@ -39,7 +29,7 @@ export class Ciao {
 
 @Component({
   selector: 'linker',
-  template: '<p><a [href]="url" [title]="name">{{ name }}</a></p>'
+  template: '<p><a [href]="url" [title]="name">{{ name }}</a></p>',
 })
 export class Linker {
   @Input() url;
@@ -58,34 +48,32 @@ export class Linker {
     </ul>
     <router-outlet></router-outlet>
     <linker name="GitHub" url="https://github.com/shuhei/babel-angular2-app"></linker>
-  `
+  `,
 })
 export class HelloApp {
 }
 
 const routing = RouterModule.forRoot([
   { path: '', component: Hello },
-  { path: 'ciao/:name', component: Ciao }
+  { path: 'ciao/:name', component: Ciao },
 ]);
 
 @NgModule({
   imports: [
     BrowserModule,
-    routing
+    routing,
   ],
   declarations: [
     HelloApp,
     Hello,
     Ciao,
-    Linker
+    Linker,
   ],
   providers: [
     Greeter,
-    provide(LocationStrategy, { useClass: HashLocationStrategy })
+    provide(LocationStrategy, { useClass: HashLocationStrategy }),
   ],
-  bootstrap: [
-    HelloApp
-  ]
+  bootstrap: [HelloApp],
 })
 export class AppModule {
 }
