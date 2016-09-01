@@ -44,7 +44,7 @@ describe('Linker', () => {
   class Parent {}
 
   it('renders a link with given attributes', () => {
-    TestBed.configureTestingModule({ declarations: [Parent] });
+    TestBed.configureTestingModule({ declarations: [Parent, Linker] });
 
     const fixture = TestBed.createComponent(Parent);
     fixture.detectChanges();

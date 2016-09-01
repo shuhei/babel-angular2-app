@@ -1,4 +1,4 @@
-import { provide, NgModule, Component, Input, Attribute } from '@angular/core';
+import { NgModule, Component, Input, Attribute } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { ActivatedRoute, RouterModule } from '@angular/router';
@@ -71,7 +71,7 @@ const routing = RouterModule.forRoot([
   ],
   providers: [
     Greeter,
-    provide(LocationStrategy, { useClass: HashLocationStrategy }),
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [HelloApp],
 })
